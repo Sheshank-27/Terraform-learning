@@ -4,15 +4,6 @@ module "vpc" {
   vpc_cidr = "10.0.0.0/16"
 
 }
-
-module "ec2" {
-  source = "./modules/ec2"
-
-  vpc_id  = module.vpc.vpc_id
-  subnet1 = module.vpc.public_subnet1
-  subnet2 = module.vpc.public_subnet2
-}
-
 module "alb" {
   source = "./modules/alb"
 
